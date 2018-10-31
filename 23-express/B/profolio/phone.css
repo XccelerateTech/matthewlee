@@ -1,0 +1,91 @@
+@media only screen and (max-width: 768px){
+    #nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1vw;
+        padding-top: 0;
+        height: 30vh;
+    }
+
+    #iconBox{
+        align-self: flex-end;
+        margin-bottom: 1.35vh;
+    }
+
+    #about {
+        height: 150vw;
+        background-image: url(./asset/about/1phone.jpg);
+        background-size: cover;
+    }
+
+    .title{
+        grid-area: b;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 4vw;
+    }
+
+    .title > h1{
+        font-size: 6vw;
+    }
+
+    #works {
+    height: 462vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g";
+    }
+
+    .albumContent > img {
+        width: 85vw; 
+        height: auto;
+    }
+
+    #a, #b, #c, #d, #e, #f, #g{
+        height: 66vw;
+    }
+
+    .pitch {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "a"
+        "a"
+        "b";
+        align-items: start;
+    }
+
+    #pitch {
+        grid-area: a;
+        font-size: 8vw;
+        letter-spacing: 0.1vw;
+        text-align: center;
+        padding-top: 7vh;
+    }
+    
+    #icon {
+        grid-area: b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        position: relative;
+    }
+
+    #icon > a {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        font-size: 8vw;
+        color: rgba(249, 166, 2, 0.95);
+        mix-blend-mode: darken;
+    }
+}

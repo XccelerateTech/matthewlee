@@ -1,0 +1,16 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "USshuffle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jasmine": "^3.3.0",
+    "lodash": "^4.17.11"
+  }
+}

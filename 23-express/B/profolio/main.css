@@ -1,0 +1,295 @@
+#nav {
+    background-color :rgba(255,255,255, 0.5);
+    height: 15vh;
+    padding-right: 10vw;
+    padding-left: 15vw;
+    z-index: 1;
+}
+
+#iconBox {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    height: 10vh;
+    width: 10vh;
+    box-shadow: 0 0 30px #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#iconBox > img {
+    height: 10vh;
+}
+
+
+.navbar-nav > li {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+#about {
+    background-image: url(./asset/about/1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 0 0 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "a a a a a a"
+    "b b b b c c"
+    "b b b b c c"
+    "b b b b c c"
+    "d d e e e e";
+    align-items: start;
+}
+
+.title {
+    grid-area: e;
+    height: 40vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.title > h1 {
+    font-size: 4vw;
+    color: darkred;
+    opacity: 0.5;
+    padding-right: 10vw;
+    mix-blend-mode: color-burn;
+}
+
+#works {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-areas: 
+    "a a a a a c c c c c f f f f f f"
+    "a a a a a c c c c c f f f f f f"
+    "a a a a a c c c c c f f f f f f"
+    "a a a a a d d d d d f f f f f f"
+    "a a a a a d d d d d g g g g g g"
+    "a a a a a d d d d d g g g g g g"
+    "b b b b b e e e e e g g g g g g"
+    "b b b b b e e e e e g g g g g g"
+    "b b b b b e e e e e g g g g g g";
+    align-items: start;
+}
+
+.albums {
+    position: relative;
+    z-index: 0;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+}
+
+.album {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.albumContent {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.albumContent > img {
+    height: 75vh; 
+    z-index: 3;
+}
+
+.bigOverlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.button {
+    position: absolute;
+    height: 5vh;
+    bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 5;
+}
+
+.button > .btn {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(69, 119, 198, 0.5);
+    box-shadow: 0 0 20px #FFFFFF;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 1vw;
+}
+
+#a {
+    grid-area: a;
+    background-image: url(./asset/works/a/a1.jpg);
+    background-size: cover;
+    height: 66.7vh;
+}
+
+#a > .overlay {
+    background-color: rgba(2, 66, 247, 1);
+    opacity: 0.5;
+    mix-blend-mode: difference;
+}
+
+#b {
+    grid-area: b;
+    background-image: url(./asset/works/b/b1.jpg);
+    background-size: cover;
+    height: 33.4vh;
+}
+
+#b > .overlay {
+    background-color: rgba(173, 249, 249, 1);
+    opacity: 0.5;
+    mix-blend-mode: inherit;
+}
+
+#c {
+    grid-area: c;
+    background-image: url(./asset/works/c/c1.jpg);
+    background-size: cover;
+    height: 33.3vh;
+}
+
+#c > .overlay {
+    background-color: rgba(249, 207, 1, 1);
+    opacity: 0.5;
+    mix-blend-mode: hard-light;
+}
+
+#d {
+    grid-area: d;
+    background-image: url(./asset/works/d/d1.jpg);
+    background-size: cover;
+    height: 33.4vh;
+}
+
+#d > .overlay {
+    background-color: rgba(226, 11, 58, 0.9);
+    opacity: 0.5;
+    mix-blend-mode: difference;
+}
+
+#e {
+    grid-area: e;
+    background-image: url(./asset/works/e/e1.jpg);
+    background-size: cover;
+    height: 33.5vh;
+}
+
+#e > .overlay {
+    background-color: rgba(14, 153, 1, 0.8);
+    opacity: 0.5;
+    mix-blend-mode: difference;
+}
+
+#f {
+    grid-area: f;
+    background-image: url(./asset/works/f/f1.jpg);
+    background-size: cover;
+    height: 44.5vh;
+}
+
+#f > .overlay {
+    background-color: rgba(111, 255, 233, 1);
+    opacity: 0.5;
+    mix-blend-mode: difference;
+}
+
+#g {
+    grid-area: g;
+    background-image: url(./asset/works/g/g1.jpg);
+    background-size: cover;
+    height: 55.6vh;
+}
+
+#g > .overlay {
+    background-color: rgba(249, 217, 4, 0.9);
+    opacity: 0.5;
+    mix-blend-mode: lighten;
+}
+
+#contact {
+    background-image: linear-gradient(-30deg, #1C70C8, #8FF4E2);
+    opacity: 0.6;
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pitch {
+    width: 60vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+}
+
+#pitch {
+    font-size: 4vw;
+    color: rgba(1,1,63, 0.9);
+    letter-spacing: 0.1vw;
+}
+
+#icon {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    z-index: 1;
+}
+
+#icon > a {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    font-size: 4vw;
+    color: rgba(249, 166, 2, 0.95);
+    mix-blend-mode: darken;
+}
+
+#icon > a:link {
+    text-decoration: none;
+}
