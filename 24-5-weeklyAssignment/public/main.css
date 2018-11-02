@@ -1,0 +1,42 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+    "a a d d"
+    "b b c c"
+    "b b c c"
+    "b b c c";
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: a
+} 
+
+.file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: d
+} 
+
+.btn-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: b
+} 
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: c
+}
+

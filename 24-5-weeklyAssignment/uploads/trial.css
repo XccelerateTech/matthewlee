@@ -1,0 +1,381 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0 0 0 0;
+    border: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.canvas {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "a b b b b c"
+    "a b b b b c"
+    "a b b b b c"
+    "a b b b b c"
+    "a b b b b c"
+    "a b b b b c";
+    align-items: start;
+}
+
+.buttons {
+    grid-area: a;
+    display: grid;
+    position: relative;
+    width: 19vw;
+    height: 100vh;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    "a1 a6"
+    "a2 a7"
+    "a3 a8"
+    "a4 a9"
+    "a5 a0";
+}
+
+.button {
+    width: 7vw;
+    height: 7vw;
+    margin: 1vw 1vw 1vw 1vw;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    box-shadow: 0 0 1.5vw rgb(30, 150, 255);
+    opacity: 0.85;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.button:hover {
+    opacity: 1
+}
+
+.buttonContent{
+    text-align: center;
+}
+
+.drop {
+    font-size: 3.8vw;
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    text-shadow: 0 0 10px rgb(255,265,45);
+    -webkit-transition: .2s;
+    transition: font-size .2s;
+}
+
+.drop:hover{
+    font-size: 4.2vw;
+}
+
+.buttonContent > p {
+    font-size: 1vw;
+    color: white;
+    padding: 0;
+    margin-top: 0.5vw;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px rgb(100,100,100);
+}
+
+.drawRect{grid-area: a1; background-color: rgb(152,225,196)}
+.drawCircle{grid-area: a2; background-color: rgb(223,198,238)}
+.drawStLine{grid-area: a3; background-color: rgb(185,221,231)}
+.drawLine{grid-area: a4; background-color: rgb(236,177,169)}
+.drawPen{grid-area: a9; background-color: rgb(249,197,138)}
+.smile{grid-area: a6; background-color: rgb(159,195,230)}
+.eraser{grid-area: a7; background-color: rgb(245,215,122)}
+.polygon{grid-area: a8; background-color: rgb(130,230,180)}
+.redo{grid-area: a5; background-color: rgb(255,110,130)}
+.undo{grid-area: a0; background-color: rgb(202,168,230)}
+
+.canvasBox {
+    grid-area: b;
+    width: 62.1vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to top, #8e9eab, #eef2f3)
+}
+
+canvas {
+    position: absolute;
+    border:1px black solid;
+    background-color: transparent;
+}
+
+#canvas-bg{
+    z-index: 0;
+    background-color: white;
+}
+#canvas-1 {z-index: 1}
+#canvas-draft {z-index: 2}
+
+.save {
+    top: 75vh;
+}
+
+.style {
+    grid-area: c;
+    display: grid;
+    grid-template-columns: 19vw;
+    grid-template-rows: 25vh 25vh 25vh 25vh;
+    grid-template-areas: 
+    "d"
+    "d"
+    "f"
+    "g";
+    align-items: flex-start;
+    background: linear-gradient(to bottom, #f1f2b5, #135058);
+}
+
+.stylePanel, .stylePanel2, .stylePanel3{
+    /* grid-area: d; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+.stylePanel {grid-area: d}
+.stylePanel2 {grid-area: f}
+.stylePanel3 {grid-area: g}
+
+#fillPanel, #fillTopPanel, #imgPanel, #imgTopPanel{background-color: rgba(65,74,76,0.3);}
+#strokePanel, #strokeTopPanel, #savePanel, #bgTopPanel{background-color: rgba(35,43,43,0.3);}
+
+.panel {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    cursor: pointer;
+}
+
+.panel2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    cursor: pointer;
+}
+
+
+.stylePanel3 > .panel2 {
+    -webkit-transition: .2s;
+    transition: font-size .2s;
+}
+
+.stylePanel3 > .panel2:hover {
+    font-size: 6vw;
+}
+
+.styleTopPanel {
+    grid-area: d;
+    height: 10vh;
+    width: 100%;
+    display: none;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.styleTopPanel2{
+    grid-area: f;
+    height: 5vh;
+    width: 100%;
+    display: none;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.topPanel {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+
+.fill {
+    height: 40vh;
+    width: 100%;
+    grid-area: d;
+    margin-top: 10vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stroke {
+    height: 40vh;
+    width: 100%;
+    grid-area: d;
+    margin-top: 10vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.image, .bgColor {
+    margin-top: 5vh;
+    height: 20vh;
+    width: 100%;
+    grid-area: f;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.imgTitle > p {
+    margin-top : 0;
+    margin-bottom: 1vw;
+    border: 0 0 0 0;
+    font-size: 1.5vw;
+}
+
+.img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "i1 i2 i3 i4";
+    grid-column-gap: 1vw;
+}
+
+.img > img {
+    width: 3vw;
+    height: 3vw;
+}
+
+#img1{grid-area: i1} #img2{grid-area: i2} #img3{grid-area: i3} #img4{grid-area: i4}
+
+#slideFill, #slideFillS {
+    align-self: center;
+    justify-self: center;
+    width: 15vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(200,200,200, 1);
+    border-radius: 1vw;
+    box-shadow: 0 0 10px rgb(30, 150, 255);
+}
+
+#slideBgC {
+    align-self: center;
+    justify-self: center;
+    width: 15vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(200,200,200, 1);
+    border-radius: 0.5vw;
+    box-shadow: 0 0 10px rgb(30, 150, 255);
+}
+
+#slideFill > p, #slideFillS > p, #slideStroke, #slideBgC > p{
+    margin: 0 0 0 0;
+    border: 0 0 0 0;
+    font-size: 1vw;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10vw;
+    height: 2vh;
+    background: #FFFFFF;
+    outline: none;
+    opacity: 0.5;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#slideBgC > .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10vw;
+    height: 1.5vh;
+    background: #FFFFFF;
+    outline: none;
+    opacity: 0.5;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2vh;
+    height: 2vh;
+    background: yellow;
+    cursor: pointer;
+}
+
+
+
+/* .layer {
+    grid-area: f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul { 
+    list-style-type: none; 
+    margin: 10px; 
+    padding: 0; 
+    margin-bottom: 10px; 
+}
+
+li, .layerTitle > p { 
+    margin: 0.5vw;; 
+    padding: 0.5vw; 
+    width: 18vw; 
+    height: 3vw;
+    background-color: aquamarine;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+.layerTitle > p {
+    background-color: rgba(255, 217, 0, 1);
+} */

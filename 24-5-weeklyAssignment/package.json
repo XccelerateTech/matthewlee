@@ -1,0 +1,21 @@
+{
+  "name": "24-5-weeklyassignment",
+  "version": "1.0.0",
+  "description": "weekly",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "del": "^3.0.0",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
+    "lokijs": "^1.5.5",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
+  }
+}
