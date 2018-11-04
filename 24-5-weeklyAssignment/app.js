@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/uploads/:id", (req, res)=>{
-    res.sendFile(`${__dirname}/uploads/${req.params.id}`)
+    res.sendFile(`${__dirname}/uploads/${req.params.id}`);
 })
 
 app.get("/test.json", (req, res)=>{

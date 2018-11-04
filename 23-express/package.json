@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express-generator": "^4.16.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
