@@ -4,7 +4,7 @@ $("h2").click(
         $.each(data, (index, value)=>{
             $("#fileList").append(`
             <li id = "${index}">
-                <a href="localhost:8080/uploads/${value}" target="_blank">${value}</a>
+                <a href="localhost:8080/uploads/${value}" target="_blank" download ="${value}">${value}</a>
             </li>
             `)
         })
