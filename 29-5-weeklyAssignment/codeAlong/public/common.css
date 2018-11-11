@@ -1,0 +1,84 @@
+body {
+    display: grid;
+    grid-template-columns: 60vw 40vw;
+    grid-template-areas: "a b"
+} 
+
+.right {
+    grid-area: a;
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas: 
+    "x"
+    "y"
+    "z";
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.title {
+    grid-area: x
+}
+
+form {
+    grid-area: y;
+    display: flex;
+    flex-direction: column;
+}
+
+form > #note {
+    background-color: aquamarine;
+    width: 30vw;
+    height: 3vw;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.output {
+    grid-area: z
+}
+
+
+
+.noteList {
+    position: relative;
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    display: grid;
+    width: 30vw;
+    height: 3vw;
+    grid-template-columns: 25vw 5vw;
+    grid-template-areas: "m n";
+    /* justify-content: center; */
+    background-color: aquamarine;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    margin-right: 5vw;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+}
+
+.list > p { 
+    grid-area: m;
+    font-size: 1vw;
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin: 0 0 0 0;
+}
+
+.list > .button {
+    grid-area: n;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
