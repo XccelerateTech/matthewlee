@@ -26,14 +26,16 @@ $(".list #update").on("click", (e) => {
     let divList = $(e.target).parent().parent()
     let context = divList.find("input").val()
     let index = $(".list").index(divList)
-    axios.put('/', { "index": index, "context": context })
-        .then(() => {
-            divList.find("input").remove();
-            divList.append(`<p>${context}</p>`)
-        })
-        .catch(function (error) {
-            console.log("fuck axios");
-        });
+    if (context != undefined){
+        axios.put('/', { "index": index, "context": context })
+            .then(() => {
+                divList.find("input").remove();
+                divList.append(`<p>${context}</p>`)
+            })
+            .catch(function (error) {
+                console.log("fuck axios");
+            });
+    }
 })
 
 $(".list #del").on("click", (e) => {
