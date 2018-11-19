@@ -1,0 +1,30 @@
+<div class="right">
+
+    <div class="title">
+        <h1>hi my username is {{name}}</h1>
+    </div>
+
+    <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="note">Type sth</label>
+        <input type="text" name="note" id="note" value="type sth">
+        <input type="submit" value="SUBMIT">
+    </form>
+
+    <div class="output">
+        <h1>showing {{name}} json data</h1>
+    </div>
+
+</div>
+
+<div class="noteList">
+    {{#each jsonData}}
+    <div class="list" id="post">
+        <p>{{this}}</p>
+        <div class="button">
+            <button id="del">delete</button>
+            <button id="update">UPDATE</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
