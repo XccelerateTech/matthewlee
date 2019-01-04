@@ -21,7 +21,10 @@
     "eofline": false,
     "array-type": [
       false
-    ]
+    ],
+    "no-console": false
+  },
+  "jsRules": {
+    "no-console": false
   }
-  
 }

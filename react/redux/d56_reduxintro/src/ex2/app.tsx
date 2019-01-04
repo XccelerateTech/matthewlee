@@ -17,7 +17,8 @@ interface IAddLinkAction extends Action {
     type: ADD_LINK;
     link: {
         title: string,
-        url: string
+        url: string,
+        key: number
     };
 }
 
@@ -41,22 +42,24 @@ interface IRemoveThisAction extends Action {
 // Collection of both for easier integration
 type LinkActions = IAddLinkAction | IClearLinkAction | IRemoveThisAction;
 
+// here define what the function do
 const rootReducer = (state: IRootState, action: LinkActions /* add parameter here */) => {
     // Use switch to handle different actions
     switch (action.type) {
         case ADD_LINK:
             return {
-                links: state.links.concat([action.link]) // Use concat to add a new link
+                ...state,
+                links: [...state.links, action.link]// Use concat to add a new link
             }
         case CLEAR_LINK:
             return {
-                links: [] // Reset the link
+                ...state,
+                links: state.links.filter(u=> false)
             }
         case REMOVE_THIS: 
-            const temp = [...state.links]
-            temp.splice(Number(action.index), 1)
             return {
-                links: temp
+                ...state,
+                links: state.links.filter(u=> u.key != action.index)
             }
         default:
             return {

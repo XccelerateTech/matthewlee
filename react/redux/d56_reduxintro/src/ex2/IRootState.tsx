@@ -1,6 +1,7 @@
 interface ILinkState {
     title: string,
-    url: string
+    url: string,
+    key: string
 }
 
 interface IRootState {
