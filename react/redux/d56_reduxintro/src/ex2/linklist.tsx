@@ -13,8 +13,7 @@ interface IAddLinkAction extends Action {
     link: {
         title: string,
         url: string
-    },
-    index: number
+    }
 }
 
 // Define CLEAR_LINK const and its type
@@ -76,8 +75,7 @@ const mapDispatchToProps = (dispatch: Dispatch<LinkActions>) => {
             link: {
                 title: 'Google',
                 url: 'https://www.google.com'
-            },
-            index: String(Math.ceil(Math.random()*1000))
+            }
         }),
         clearLink: () => dispatch({
             type: CLEAR_LINK

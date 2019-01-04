@@ -1,5 +1,6 @@
 import * as React from "react";
-import { createStore, Action } from "redux";
+import { createStore, Action, applyMiddleware } from "redux";
+import logger from "redux-logger";
 import { Provider } from "react-redux";
 import LinkList from "./linklist";
 import { render } from "react-dom";
@@ -65,7 +66,8 @@ const rootReducer = (state: IRootState, action: LinkActions /* add parameter her
 };
 
 // ignore the types
-const store = createStore<any, any, any, any>(rootReducer);
+const store = createStore<IRootState>(rootReducer,
+    applyMiddleware(logger));
 
 const App = () => (
     <Provider store={store}>
