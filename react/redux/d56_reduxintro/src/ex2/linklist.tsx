@@ -12,12 +12,8 @@ interface IAddLinkAction extends Action {
     type: ADD_LINK;
     link: {
         title: string,
-<<<<<<< HEAD
-        url: string
-=======
         url: string,
         key: string
->>>>>>> b67e017e58f8558488de936b616591206f54d12c
     }
 }
 
@@ -59,9 +55,9 @@ const listComponent = (props: any) => {
             <button onClick={props.addLink}>New Link</button>
             <button onClick={props.clearLink}>Clear</button>
             {props.links.map((l: { key: string; url: string | undefined; title: string; })=> (
-                <div id = {l.key}>
+                <div>
                     <a href={l.url}>{l.title}</a>
-                    <button onClick={props.removeThis}>Remove this shit with random {l.key}</button>
+                    <button id = {l.key} onClick={props.removeThis}>Remove this shit with random {l.key}</button>
                 </div>
             ))}
         </div>
@@ -83,12 +79,8 @@ const mapDispatchToProps = (dispatch: Dispatch<LinkActions>) => {
             // pass this as props
             link: {
                 title: 'Google',
-<<<<<<< HEAD
-                url: 'https://www.google.com'
-=======
                 url: 'https://www.google.com',
                 key: String(Math.random())
->>>>>>> b67e017e58f8558488de936b616591206f54d12c
             }
         }),
         clearLink: () => dispatch({

@@ -59,7 +59,7 @@ const rootReducer = (state: IRootState, action: LinkActions /* add parameter her
         case REMOVE_THIS: 
             return {
                 ...state,
-                links: state.links.filter(u=> u.key != action.index)
+                links: state.links.filter(u=> u.key !== action.index)
             }
         default:
             return {
@@ -69,7 +69,7 @@ const rootReducer = (state: IRootState, action: LinkActions /* add parameter her
 };
 
 // ignore the types
-const store = createStore<IRootState>(rootReducer,
+const store = createStore<any,any,any,any>(rootReducer,
     applyMiddleware(logger));
 
 const App = () => (

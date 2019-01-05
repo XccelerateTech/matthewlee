@@ -20,7 +20,7 @@ const rootReducer = (state: IRootState) => {
     };
 };
 // ignore the types
-const store = createStore<IRootState>(rootReducer,
+const store = createStore<any,any,any,any>(rootReducer,
     applyMiddleware(logger));
 
 const App = () => (
